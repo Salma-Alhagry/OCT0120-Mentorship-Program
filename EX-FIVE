@@ -1,0 +1,71 @@
+#EX 5.1
+>>> from datetime import date
+>>> today = date.today()
+>>> print('Date', today)
+Date 2020-11-07
+>>> from datetime import datetime
+>>> now = datetime.now()
+>>> print('now', now)
+now 2020-11-07 10:35:28.308349
+
+#------------------------------------
+
+#EX 5.2
+
+>>> def check_fermat(a,b,c,n):
+	if n < 2:
+		print('HOLY SMOKES, FERMAT WAS WRONG!')
+	else:
+		print('No, That doesnot work')
+
+		
+>>> check_fermat(1,1,1,1)
+HOLY SMOKES, FERMAT WAS WRONG!
+>>> check_fermat(1,2,3,4)
+No, That doesnot work
+#--------------------------------------
+
+#EX 5.3
+
+>>> def is_triangle(a,b,c):
+	if a < b + c or b < a + c or c < a + b:
+		print('NO')
+	elif a == b + c or b == a + c or c == a + b:
+		print('it is a degenerate triangle')
+	else:
+		print('YES!')
+
+		
+>>> is_triangle(12,24,35)
+NO
+
+#-------------------------------
+
+#5.4
+
+def recurse(n,s):
+	if n == 0:
+		print(s)
+	else:
+		recurse(n-1, n+s)
+
+		
+>>> recurse(3, 0)
+6
+
+>>> recurse(-1,0)
+Traceback (most recent call last):
+  File "<pyshell#66>", line 1, in <module>
+    recurse(-1,0)
+  File "<pyshell#65>", line 5, in recurse
+    recurse(n-1, n+s)
+  File "<pyshell#65>", line 5, in recurse
+    recurse(n-1, n+s)
+  File "<pyshell#65>", line 5, in recurse
+    recurse(n-1, n+s)
+  [Previous line repeated 1021 more times]
+  File "<pyshell#65>", line 2, in recurse
+    if n == 0:
+RecursionError: maximum recursion depth exceeded in comparison
+
+''' (-1,0) create infinite loop '''
