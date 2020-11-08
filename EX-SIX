@@ -1,0 +1,84 @@
+# Ex 6.1
+
+>>> def b(z):
+	prod = a(z,z)
+	print(z,prod)
+	return prod
+
+>>> def a(x,y):
+	x = x+1
+	return x * y
+
+>>> def c(x,y,z):
+	total = x +y + z
+	square = b(total)**2
+	return square
+
+>>> x = 1
+>>> y = x +1
+>>> print(c(x, y+3, x+y))
+9 90
+8100
+
+#Can't figure out the flow of execution.
+
+#--------------------------------------------------------------------------------------------
+
+# Ex 6.2
+
+>>> def ack(m, n):
+	if m == 0:
+		return n+1
+	elif n == 0:
+		return ack(m-1, 1)
+	else:
+		return ack(m-1, ack(m,n-1))
+
+	
+>>> ack(3,4)
+125
+
+#for large (m,n)
+>>> ack(10, 15)
+
+Error: RecursionError: maximum recursion depth exceeded in comparison
+
+#---------------------------------------------------------------------------------------------
+
+# Ex 6.3
+
+
+>>> def is_palindrome(word):
+	      return word == word[ ::-1]
+       
+>>> is_palindrome('otto')
+True
+
+>>> is_palindrome('roma')
+False
+  
+#---------------------------------------------------------------------------------------------
+
+#Ex 6.4
+
+>>> def is_power(a,b):
+	if a % b ==0:
+		return True
+	else:
+		return False
+
+	
+>>> print(is_power(2,6))
+False
+>>> print(is_power(6,2))
+True
+
+#----------------------------------------------------------------------------------------------------
+
+# Ex 6.5
+
+>>> def gcd(a,b):
+	if b == 0:
+		return a
+	r = a % b
+	return gcd(b,r)
