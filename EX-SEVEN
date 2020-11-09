@@ -12,3 +12,33 @@ def eval_loop():
 
 # Ex 7.3
 
+>>> import math
+>>> def factorial(i):
+	if i == 0:
+		return 1
+	else:
+		return i*factorial(i-1)
+
+	
+>>> def pi_equ():
+	total, n =0,0
+	num = (2*m.sqrt(2)) / 9801
+	while True:
+		numerator = factorial(4*n)*(1103+26390*n)
+		denominator = (factorial(n)**4)*396**(4*n)
+		last_step = num *(numerator / denominator)
+		total += last_step
+		if abs(last_step)< 1e-15:
+			break
+		n +=1
+	return 1/total
+
+>>> pi_equ()
+3.141592653589793
+>>> print(m.pi)
+3.141592653589793
+
+
+
+
+
