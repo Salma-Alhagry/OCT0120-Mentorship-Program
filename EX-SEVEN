@@ -1,0 +1,14 @@
+# Ex 7.2
+
+def eval_loop():
+	while True:
+		x = input('Enter your expression: ')
+		if x == 'done' or x == 'Done':
+			break
+		else:
+			y = eval(x)
+			print(y)
+#-------------------------------------------------------------------------
+
+# Ex 7.3
+
