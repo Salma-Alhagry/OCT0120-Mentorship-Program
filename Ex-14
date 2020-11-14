@@ -1,0 +1,24 @@
+#  Ex 14.1
+
+def sed(pattern_str, replacement_str, readfile, writefile):
+	try:
+		r = open(readfile)
+		w = open(writefile, 'w')
+		a = 'a'
+		text = ''
+		while a != '':
+			a = r.readline()
+			text += a
+		while pattern_str in text:
+			p = text.find(pattern_str)
+			text = text[:p]+replacement_str+text[p+len(pattern_str):]
+		w.write(text)
+		r.close()
+		w.close()
+	except:
+		return "Can't Handle it"
+    
+#--------------------------------------------------------------------------------
+
+#   Ex 14.2
+
