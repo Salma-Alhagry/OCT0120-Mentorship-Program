@@ -1,0 +1,14 @@
+#  Ex 18-1
+
+Class Digram
+
+>>> Class PingPongParent --> It is the parent and has no methods or objects.
+
+>>> Class Ping(PingPongParent) --> It is the child of PingPongParent with its method.
+
+>>> Class Pong(PingPongParent) --> Second child of PingPongParent with two methods.
+
+#----------------------------------------------------------------------------------
+
+#  Ex 18-2
+
