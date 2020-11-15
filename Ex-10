@@ -1,0 +1,88 @@
+# Ex 10.1
+
+def nested_sum(t):
+    total = 0
+    for i in t:
+        if type(i) == list: # check whether i is list or not
+            total = total + add_all(i)
+        else:
+            total += i
+    return total
+    
+#------------------------------------------------------------------------
+
+# Ex 10.2
+
+import numpy as np
+
+t = [1,2,3]
+np.cumsum(t)
+
+#-----------------------------------------------------------------------------
+
+#  Ex 10.3
+
+>>> def middle(t):
+	del t[0]
+	del t[-1]
+	print(t)
+#-----------------------------------------------------------------------------
+
+# Ex 10.4
+
+>>> def chop(t):
+	del t[0]
+	del t[-1]
+	return None
+ #---------------------------------------------------------------------------
+ 
+ # Ex 10.5
+ 
+ >>> def is_sorted(t):
+	for i in range(len(t)):
+		if t [i+1] > t[i]:
+			return True
+		else:
+			return False
+#---------------------------------------------------------------------------
+
+# Ex 10.6
+
+>>> def is_anagram(s1,s2):
+	if s1 == s2:
+		return True
+	elif s1 != s2:
+		s1 = sorted(s1)
+		s2= sorted(s2)
+		return False
+	else:
+		print("Can't handle it")
+#----------------------------------------------------------------------------
+
+# Ex 10.7 
+
+>>> def is_duplicates(t):
+	sort = t[:]
+	sort.sort()
+	for i in range(len(sort)-1):
+		if sort[i] == sort[i+1]:
+			return True
+		else:
+			return False
+#---------------------------------------------------------------------------
+
+# Ex 10.8
+
+>>> import random
+>>> def birthday(n,t):
+	a = [0]*n
+	b = 0
+	for j in range(t):
+		for i in range(n):
+			a[i] = randint(1,365)
+		if has_duplicates(a):
+			b = b+1
+#----------------------------------------------------------------------------------
+
+
+
