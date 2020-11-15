@@ -1,0 +1,68 @@
+# Ex 9.1
+
+>>> def charCount():
+	fin = open('C:\\Users\\Romisaa\\Desktop\\words.txt')
+	for line in fin:
+		words = line.strip()
+		if len(words)> 20:
+			print(words)
+#---------------------------------------------------------------------
+
+# 9.2
+
+>>> def has_no_e(word):
+	for letter in word:
+		letter = 'e'
+		if letter in word:
+			print('FOUND')
+		
+		else:
+			print('Not Found')
+      
+#-------------------------------------------------------------------
+
+# Ex 9.3
+
+>>> def avoids(word, forbidden):
+	for letter in word:
+		if letter in forbidden:
+			print('Forbidden')
+		else:
+			print('Allowed')
+#---------------------------------------------------------------------------
+
+# Ex 9.4
+
+>>> def uses_only(word, str_of_letters):
+	for letter in word:
+		if letter not in str_of_letters:
+			return False
+	return True
+  
+#-------------------------------------------------------------------------
+
+# Ex 9.5
+
+>>> def uses_all(word, required_letters):
+	for letter in required_letters:
+		if letter in word:
+			return True
+	return False
+#-----------------------------------------------------------------------
+
+# Ex 9.6
+
+>>> def is_abecedarian(word):
+	i = 0
+	count = 0
+	while i < len(word)-1:
+		if word[i] == word[i+1]:
+			count = count +1
+			if count == 3:
+				return True
+			
+			i = i +1
+		else:
+			count = 0
+		return False
+#--------------------------------------------------------------------------
