@@ -1,1 +1,39 @@
+# Ex 11.1
 
+>>> fin = open('C:\\Users\\Romisaa\\Desktop\\words.txt', 'r')
+>>> def read_word():
+	d = dict()
+	for line in fin:
+		word = line.strip()
+		d[word] = word
+	return d
+#---------------------------------------------------------------------
+
+# Ex 11.3
+ 
+>>> cache = {}
+>>> def ackermann(m,n):
+	if m == 0:
+		return n +1
+	if n == 0:
+		return ackermann(m-1,1)
+	if (m,n) in cache:
+		return cache[m,n]
+	else:
+		cache[m,n] = ackermann(m-1, ackermann(m,n-1))
+		return cache[m,n]
+
+#------------------------------------------------------------
+
+# Ex 11.4
+
+>>> def is_duplicate(t):
+	d = dict()
+	for i in t:
+		if i in d:
+			return True
+		else:
+			return False
+  #---------------------------------------------------------------
+  
+ 
