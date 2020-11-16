@@ -43,5 +43,58 @@
 
 # 2
 
+>>> import datetime
+>>> birth = datetime.date(int(input('Birth Year: ')), int(input('Birth Month: ')), int(input('Birth Day: ')))
+Birth Year: 1995
+Birth Month: 12
+Birth Day: 1
+>>> print('Birth: ', birth)
+Birth:  1995-12-01
+>>> today = datetime.date.today()
+>>> print('Today: ', today)
+Today:  2020-11-16 
+>>> if(
+	today.month == birth.month and today.day >= birth.day or today.month > birth.month):
+	next_birthday_year = today.year +1
+else:
+	next_birthday_year = today.year
 
-  
+	
+>>> next_birthday_year = datetime.date(next_birthday_year, birth.month, birth.day)
+>>> print('Next Birthday: ', next_birthday_year)
+Next Birthday:  2020-12-01
+>>> diff = next_birthday_year - today
+>>> print('Days left for next birthday: ', diff.days, 'days')
+Days left for next birthday:  15 days
+
+
+
+# 3
+
+
+>>> import datetime
+>>> birth1 = datetime.date(int(input('Birth Year: ')), int(input('Birth Month: ')), int(input('Birth Day: ')))
+>>> birth2 = datetime.date(int(input('Birth Year: ')), int(input('Birth Month: ')), int(input('Birth Day: ')))
+>>> if(
+	birth1.month == birth2.month and birth1.day == birth2.day and birth1.year != birth2.year):
+	print('ITS YOUR DOUBLE DAY')
+else:
+	print('You are older than him')
+	
+	
+# 4
+
+>>> import datetime
+>>> birth1 = datetime.date(int(input('Birth Year: ')), int(input('Birth Month: ')), int(input('Birth Day: ')))
+>>> birth2 = datetime.date(int(input('Birth Year: ')), int(input('Birth Month: ')), int(input('Birth Day: ')))
+>>> if(
+	birth1.day > birth2.day or birth1.month > birth2.month or birth1.year > birth2.year):
+	diff = birth1 - birth2
+	print(diff, 'day')
+else:
+	print('No Difference')
+
+
+	
+
+
