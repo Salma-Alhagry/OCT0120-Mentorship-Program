@@ -1,0 +1,87 @@
+# Ex 15.1
+
+>>> class Point:
+	def __init__(self, center=(0,0)):
+		self.x = center[0]
+		self.y = center[1]
+		# Assign (0,0) by their index to self.x and self.y
+
+		
+>>> def print_point(self):
+	print("The point is at ({x},{y})".format(x=self.x, y=self.y))
+
+	
+>>> class Circle:
+	def __init__(self,center,radius):
+		self.center = Point(center)
+		self.radius = radius
+
+	
+>>> def print_circle(self):
+	print("The circle's center is at ({x},{y}) and a radius of {radius}".format(x=self.center.x, y=self.center.y, radius= self.radius))
+
+	
+>>> class Rectangle:
+	def __init__(self, tl, length, height):
+		self.tl = Point(tl)
+		self.length = length
+		self.height = height
+		self.tr = Point(((tl[0]+length), tl[1]))
+		self.bl = Point((tl[0], (tl[1]-height)))
+		self.br = Point(((tl[0]+length), (tl[1]-height)))
+
+		
+>>> def print_rect(self):
+	print("The corners of the rectangle are ({tl_x},{tl_y}),({tr_x},{tr_y}),({bl_x},{bl_y}),({br_x},{br_y})".format(tl_x=self.tl.x, tl_y=self.tl.y,tr_x=self.tr.x, tr_y=self.tr.y, bl_x = self.bl.x, bl_y = self.bl.y, br_x=self.br.x, br_y=self.br.y))
+
+	
+>>> def point_in_circle(c,p):
+	if ((p.x <= c.center.x+c.radius and p.x >= c.center.x-c.radius) and (p.y <= c.center.y+c.radius and p.y >= c.center.y-c.radius)):
+		return True
+	else:
+		return False
+
+	
+>>> def rect_in_circle(c,r):
+	if (point_in_circle(c, r.tl) and point_in_circle(c, r.tr) and
+         point_in_circle(c, r.bl) and point_in_circle(c, r.br)):
+		return True
+	else:
+		return False
+
+	
+>>> def rect_circle_overlap(c,r):
+	if (point_in_circle(c, r.tl) or point_in_circle(c, r.tr) or
+         point_in_circle(c, r.bl) or point_in_circle(c, r.br)):
+		return True
+	else:
+		return False
+#------------------------------------------------------------------------------------------------------------
+
+# Ex 15.2
+
+1-
+
+>>> import turtle
+>>> def draw_rect(t,length):
+	for i in range(4):
+		t.fd(length)
+		t.lt(90)
+
+>>> bob = turtle.Turtle()
+
+
+
+2-
+
+>>> import turtle
+>>> def draw_circle(t,length, n):
+	for i in range(n):
+		t.fd(length)
+		t.lt(360/n)
+
+		
+>>> bob = turtle.Turtle()
+>>> bob.penup()
+>>> bob.sety(-270)
+>>> bob.pendown()
