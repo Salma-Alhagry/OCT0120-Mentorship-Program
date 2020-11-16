@@ -1,2 +1,6 @@
 # Ex 12.1
 
+>>> def most_frequent(s):
+	return "".join([
+		c for frequency, c in sorted(
+			[(s.count(c), c) for c in set(s)], reverse= True)])
